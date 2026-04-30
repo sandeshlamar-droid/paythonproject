@@ -1,0 +1,168 @@
+1. A hospital system stores patient names in random case for example rahUl DahaL. 
+   Write a program to display the name in proper title format on the prescription.
+   ANS:
+   full_name = rahUl DahaL
+   print(full_name.title())
+
+2. A cybersecurity system requires all passwords to be checked in lowercase for consistency.
+   Take a password input like 'Pass@123' and convert it for comparison.
+   ANS:
+   password= "Sandesh@"
+   print(password .lower())
+
+3. A movie ticket booking system receives the movie name in lowercase 'spider-man no way home'. 
+   Display it in title case on the ticket.
+   ANS:
+   moviename='spider-man no way home'
+   print(moviename.title())
+
+4. A school notice board program takes a heading input and displays it in ALL CAPS for attention. 
+   Take input 'annual sports day' and display it.
+   ANS:
+   annoucement = input("enter the announcement title:")
+   print(announcement.capitalize())
+ 
+5. A fun CAPS-LOCK reversal tool takes the sentence 'hELLO wORLD' and swaps every letter's case. 
+   Write a program for this.
+   ANS:
+   sentence = "hELLO wORLD"
+   print(sentence.swapcase())
+
+ * find(), index(), count(), startswith(), endswith().
+6. A document editor wants to find the first position where the word 'error'appears in a log message:  
+   'System error detected, error code 404'.
+   ANS:
+   logmessage = "system error delected, error code 404"
+   print(logmessage.find("error"))
+
+7. An email validation system checks whether an entered email ends with'@gmail.com'. 
+   Write a program to validate it.
+   ANS:
+   Email = Input("Enter your email:")
+   print(Email.endswith("@gmail.com"))
+
+8. A spam filter counts how many times the word 'free'appears in a message: 'Get free stuff, 
+   free gifts and free coupons now!'.
+   ANS:
+   Message = "Get free stuff, free gifts and free coupons now!"
+   print(message.count("free"))
+
+9. A URL checker verifies whether a website link starts with "https" for security. Write a program for this.
+   ANS:
+   websiteLink = input("Enter your site like:")
+   print("website link  starts with https?:",websiteLink.startswith("https"))
+
+10. A resume scanner checks whether the keyword 'Python'is present in a resume text. Use the in operator.
+   ANS:
+   Resum = input("Enter your resume:")
+   print(Resume.find("python"))
+
+11. A bank transaction log uses index() to find the exact position of the word 'FAILED'in the message 
+   'Transaction FAILED due to low balance'.
+   ANS:
+   failsafe = "Transaction FAILED due to low balance"
+   print(failsafe.index("FAILED"))
+
+12. A government office receives a file named 'budget_report.pdf'. Write a Python program 
+    that checks whether the file is a PDF document or not using endswith() 
+    and directly print the result.
+    ANS:
+    FIle = "budget_report.pdf"
+    print("provide document is a pdf file?:",File.endswith("pdf"))
+
+13. A telecom registration system receives a phone number '+977-9841123111'.
+    Write a Python program that checks whether the phone number starts with the Nepal country 
+    code '+977'. Print the result directly.
+    ANS:
+    phoneNum = "+977-9841123111"
+    print("The phone number starts with the Nepal country code?:")
+    phoneNum.startswith("+977")
+
+14. A cybersecurity system receives a url 'https://www.moha.gov.np/'. Write a Python program that 
+    checks whether the URL belongs to a government website, print the result directly. 
+    ANS:
+    siteLink = "https:https://www.moha.gov.np/"
+    print("URL belongs to a government website?:",siteLink.endswith("gov.np/"))
+
+  * Methods
+  * replace(), strip(), lstrip(), rstrip()
+15. A customer feedback form receives input with extra spaces:'Great service!'. Clean it before saving to the database.
+    ANS:
+    feedback = "Great service!"
+    print(feedback.strip())
+
+16. A chat application replaces all occurrences of a banned word 'hate' with '****'in the message "I hate this, 
+    hate it completely".
+    ANS:
+    Message = "I hate this, hate it completely"
+    print(Message.replace("hate","***"))
+
+17. A file system receives filenames with leading slashes like'///student_records.pdf '. Remove the leading slashes.
+    ANS"
+    filenames = "///student_records>pdf"
+    print(filename.lstrip("/"))
+
+18: A web scraper fetches product prices as 'Price: $120.33 ' with trailing spaces.
+    Clean the right side using rstrip() and remove symbols too.
+    AND:
+    price = "price:$120.33"
+    print(price.replace("$","").rstrip().replace(":",""))
+
+19. A phone number formatter takes '+977 984-123-4567'and removes all dashes - using replace() 
+    to store only digits format.
+    ANS:
+    phoneNum = "+977 9841234567"
+    print(phoneNum.replace("-",""))
+
+  * Methods
+  * split(), join()
+20. A CSV file contains student data as 'Aarav,22,Kathmandu,Computer Science'.  
+    Split it into individual fields and display each on a new line.
+    ANS:
+    CSV = "Aarav,22,Kathmandu,Computer Science"
+    print('/n'.join(CSV.split(",")))
+
+21. A social media app stores hashtags as a 'Python, Coding, Nepal, Tech'.
+    Join them with # prefix to display as #Python #Coding #Nepal #Tech.
+    ANS:
+    data = "python, Coding, Nepal, Tech"
+    print("#"+"#".join(data.split(",")))
+
+22. A train ticket system receives passenger names separated by commas:'Ram, Shyam, Hari, Sita'. 
+    Split and count the total number of passengers.
+    ANS:
+    Names = "Ram, Shyam, Hari, Sita"
+    print(len(Names.split(",")))
+
+23. A sentence builder takes individual words ['The', 'flight', 'departs', 'at','6AM'] and joins 
+    them with a space to form a proper sentence.
+    ANS:
+    Words = {'The','flight','departs','at','6AM'}
+    print(''.join(words))
+
+  * Methods
+  * isdigit(), isalpha(), isalnum(), isspace(), isupper(), islower()
+24. A government form validation checks whether the entered age contains only digits. Take input '25'or '25abc'and validate it.
+    ANS:
+    age = '25abc'
+    print("entered age contains only digits?:",age.isdigit)
+
+25. A username registration system checks that the username contains only letters and numbers, no special characters.
+    ANS:
+    username = input("Enter your username:")
+    print("username contains only letters and numbers and no special characters?:",username.isalnum())
+
+26. A name field validator in a school admission form checks that the student's name contains only alphabets (no digits).
+    ANS:
+    Name = input("Enter yourn name:")
+    print("Name contains only alphabets?:",Name.isalpha())
+
+27. A PIN verification system checks whether the user's PIN is all uppercase letters for a code like 'ASDF'.
+    ANS:
+    Pin = "ASDF"
+    print("Pin only  contains uppercase letters?:",Pin.isupper())
+
+28. A blank field detector in a form checks whether the user entered only spaces.
+    ANS:
+    userinput = input("Enter your details:")
+    print("contains only spaces?:",isspace())
