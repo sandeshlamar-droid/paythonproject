@@ -122,9 +122,37 @@ if user_input == 'exit':
 # [count] times. Continue this process until the phrase has been entered three times.
 
 
+count = 0
+while True:
+    user_input = input('Enter a name:')
+    if user_input == 'good luck':
+        count += 1
+        if count < 3:
+            print(f'you typed the same word {count} times')
+        else:
+            print('you typed good luck three times')
+            break
+
+
 # 8. Generate a random number (1–50). Give the user up to 7 attempts to guess it using a
 # while loop. Track remaining attempts and stop early if they guess correctly or run out
 # of tries
+
+random_number = random.randint(1, 50)
+attempts = 7
+while attempts > 0:
+    user_guess = int(input('guess the number between 1 and 50:'))
+    if user_guess == random_number:
+        print('congratulations! you guessed the number')
+        break
+    elif user_guess < random_number:
+        print('guess higher')
+    else:
+        print('guess lower')
+        attempts -= 1
+        print(f'you have {attempts} attempts left')
+else:
+    print(f'sorry, you ran out of attempts.')
 
 
 # 9. Write a Python program that simulates a basic elevator system. The program should
@@ -144,6 +172,25 @@ if user_input == 'exit':
 # e) State Update: After moving, update the current floor to the target floor so
 # the next movement starts from the new location.
 
+current_floor = 1
+while True:
+    try:
+        target_floor = int(input('Enter the destination floor (0 to exit): '))
+        if target_floor == 0:
+            print('Goodbye!')
+            break
+        elif target_floor < 1 or target_floor > 10:
+            print('Invalid floor. Please enter a floor between 1 and 10.')
+        else:
+            if target_floor > current_floor:
+                print('Going up!')
+            elif target_floor < current_floor:
+                print('Going down!')
+            else:
+                print('You are already on that floor.')
+            current_floor = target_floor
+    except ValueError:
+        print('Invalid input. Please enter a valid floor number.')
 
 # 10. Develop a two-player Rock, Paper, Scissors game. The program should automate the
 # scoring logic and continue the match until one player reaches a specific score.
@@ -166,6 +213,37 @@ if user_input == 'exit':
 # > If a player reaches 5, announce the winner example ‘player1 won the
 # game’ and use the break statement to end the program.
 
+player1_score = 0
+player2_score = 0
+choices = ['rock', 'paper', 'scissors']
+while True:
+    player1_choice = input(
+        'Player 1, enter your choice (rock, paper, scissors): ').lower()
+    player2_choice = input(
+        'Player 2, enter your choice (rock, paper, scissors): ').lower()
+
+    if player1_choice and player2_choice not in choices:
+        print('Invalid choice.')
+
+    if player1_choice == player2_choice:
+        print("It's a tie!")
+    elif (player1_choice == 'rock' and player2_choice == 'scissors') or \
+         (player1_choice == 'paper' and player2_choice == 'rock') or \
+         (player1_choice == 'scissors' and player2_choice == 'paper'):
+        print('Player 1 wins this round!')
+        player1_score += 1
+    else:
+        print('Player 2 wins this round!')
+        player2_score += 1
+
+    print(f'Score - Player 1: {player1_score}, Player 2: {player2_score}')
+
+    if player1_score == 5:
+        print('Player 1 won the game!')
+        break
+    elif player2_score == 5:
+        print('Player 2 won the game!')
+        break
 
 # 11. Write a python program to get the following output using while loop.
 # 1 – 49
@@ -178,14 +256,49 @@ if user_input == 'exit':
 # 48 – 2
 # 49 –1
 
+left = 1
+while left <= 49:
+    right = 50 - left
+    print(f'{left} - {right}')
+    left += 1
+
 
 # 12. Write a program that accepts a number from the user and calculates the sum of all
 # numbers from 1 up to that number.
+
+number = int(input('Enter a number:'))
+sum = 0
+i = 1
+while i <= number:
+    sum += i
+    i += 1
+print(f'The sum of numbers from 1 to {number} is: {sum}')
 
 
 # 13. Print alphabet series A to Z.
 # Output: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
 
+code = ord('A')
+end_code = ord('Z')
+
+while code <= end_code:
+    print(chr(code), end=' ')
+    code += 1
+
+print()
+
 
 # 14. Write a program to find the numbers which are below 20 in a list.
 # number = [2, 40, 21, 31, 10, 7, 5]
+
+
+number = [2, 40, 21, 31, 10, 7, 5]
+index = 0
+
+print('Numbers below 20:')
+
+i = 0
+while index < len(number):
+    if number[index] < 20:
+        print(number[index])
+    index += 1
